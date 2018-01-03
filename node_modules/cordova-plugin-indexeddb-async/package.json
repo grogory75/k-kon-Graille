@@ -1,0 +1,74 @@
+{
+  "_from": "cordova-plugin-indexeddb-async",
+  "_id": "cordova-plugin-indexeddb-async@2.2.1",
+  "_inBundle": false,
+  "_integrity": "sha1-v9ke8Din9UQiXuwzlR0nG1Cu7Dk=",
+  "_location": "/cordova-plugin-indexeddb-async",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-indexeddb-async",
+    "name": "cordova-plugin-indexeddb-async",
+    "escapedName": "cordova-plugin-indexeddb-async",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-indexeddb-async/-/cordova-plugin-indexeddb-async-2.2.1.tgz",
+  "_shasum": "bfd91ef038a7f544225eec33951d271b50aeec39",
+  "_spec": "cordova-plugin-indexeddb-async",
+  "_where": "C:\\Users\\chartier-06602\\testGreg",
+  "author": {
+    "name": "ABB Austin",
+    "url": "http://abb.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ABB-Austin/cordova-plugin-indexeddb-async/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-indexeddb-async",
+    "platforms": [
+      "android",
+      "ios",
+      "windows",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "indexeddbshim": "^2.2.1"
+  },
+  "deprecated": false,
+  "description": "An asynchronous IndexedDB plug-in for Cordova apps",
+  "devDependencies": {
+    "npm-check-updates": "^2.2.0",
+    "version-bump-prompt": "^1.5.1"
+  },
+  "homepage": "https://github.com/ABB-Austin/cordova-plugin-indexeddb-async#readme",
+  "keywords": [
+    "cordova",
+    "indexeddb",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows8",
+    "cordova-windows",
+    "cordova-browser"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-indexeddb-async",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABB-Austin/cordova-plugin-indexeddb-async.git"
+  },
+  "scripts": {
+    "release": "npm run upgrade && bump --prompt --tag --push --all && npm publish",
+    "upgrade": "ncu --upgradeAll && npm update && cp node_modules/indexeddbshim/dist/indexeddbshim.min.js www/indexeddbshim.min.js"
+  },
+  "version": "2.2.1"
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+		<!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *">-->
+		<meta http-equiv="Content-Security-Policy" content="
+		default-src 'self' data: gap:
+			*;
+		script-src 'self' 'unsafe-inline' 'unsafe-eval'
+			*;
+		style-src 'self' 'unsafe-inline' 'unsafe-eval'
+			*;
+		media-src 'self' 'unsafe-inline' 'unsafe-eval'
+			*;
+		img-src 'self' 'unsafe-inline' 'unsafe-eval'
+			*;
+		connect-srv 'self' 'unsafe-inline' 'unsafe-eval'
+			*
+		">		
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" href="css/materialize.min.css">		
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>Ké'Kon'Graille</title>
+    </head>
+    <body>
+		<nav>
+		  <div class="nav-wrapper red lighten-2">
+			<!--<img src="img/logo.png" alt="Logo" class="brand-logo" width="50" height="50">-->
+			<h1 class="title">Ké'Kon'Graille</h1>
+			<i class="material-icons large">local_dining</i>
+		  </div>
+		</nav>	
+	
+		<div class="container">
+		
+			<div class="card-panel">
+				<span class="card-title">Mes restaurants</span>
+				<div class="collection">
+					<a href="#!" class="collection-item">Alvin</a>
+					<a href="#!" class="collection-item">Blvin</a>
+					<a href="#!" class="collection-item">Clvin</a>
+					<a href="#!" class="collection-item">Dlvin</a>
+				</div>
+			</div>		
+		
+			<div class="card-panel center-align">
+			   <form>
+				 <div class="input-field">
+				   <input id="city" type="text">
+				   <label for="city">Your city</label>
+				 </div>
+				 <a class="waves-effect waves-light btn deep-purple lighten-1" id="getWeather">Get Weather</a>
+			   </form>
+			</div>	
+		
+			<div class="card-panel center-align indigo lighten-4" id="card">
+			</div>
+			
+			<div class="card-panel center-align">
+				<div id="demo"></div>
+				<div class="row">
+					<div class="col s8">
+						<div id="mapholder" style="width:100%; height:400px;"></div>
+					</div>
+					<div class="col s4">
+						<a class="waves-effect waves-light btn deep-purple lighten-1" id="getMiam">Get MiaMiam</a>
+						<br /><br />
+						<a class="waves-effect waves-light btn deep-purple lighten-1" id="getRestau">Get Restau</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+				© 2018 Copyright KéKéTeam
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>		
+		
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>		
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPgLiTF0y8vh5-uegfvLoDwC1isHBNJnQ&libraries=places"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
